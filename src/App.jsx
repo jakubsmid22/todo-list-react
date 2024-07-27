@@ -1,9 +1,9 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import Form from "./components/Form"
 import TodoList from "./components/TodoList"
 const App = () => {
 
-  const [tasks, setTasks] = useState([]);
+  const [tasks, setTasks] = useState(JSON.parse(localStorage.getItem("tasks")) || []);
 
   const addTask = (text) => {
     setTasks([...tasks, text]);
@@ -12,6 +12,10 @@ const App = () => {
   const deleteTask = (id) => {
     setTasks(tasks.filter((task, i) => i !== id));
   };
+
+  useEffect(() => {
+    localStorage.setItem("tasks", JSON.stringify(tasks));
+  }, [tasks]);
 
   return (
     <main className="flex flex-col gap-5 items-center">
