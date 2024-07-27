@@ -6,7 +6,7 @@ const App = () => {
   const [tasks, setTasks] = useState([]);
 
   const addTask = (text) => {
-    setTasks(tasks.push(text));
+    setTasks([...tasks, text]);
   }
 
   return (

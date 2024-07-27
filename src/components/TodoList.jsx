@@ -1,7 +1,10 @@
 
-const TodoList = () => {
+const TodoList = ({tasks}) => {
+
   return (
-    <div>TodoList</div>
+    <div>
+        {tasks.map((task, i) => <p key={i}>{task}</p>)}
+    </div>
   )
 }
 

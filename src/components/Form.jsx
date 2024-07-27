@@ -6,12 +6,12 @@ const Form = ({addTask}) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    addTask(text)
+    addTask(text);
   }
 
   return (
     <form className="space-x-5" onSubmit={handleSubmit}>
-        <input onChange={e => setText(e.target.value)} type="text" />
+        <input className="bg-transparent" onChange={e => setText(e.target.value)} type="text" />
         <input role="button" type="submit" value="SUBMIT" />
     </form>
   )
