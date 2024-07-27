@@ -1,9 +1,12 @@
-
+import Form from "./components/Form"
+import TodoList from "./components/TodoList"
 const App = () => {
   return (
-    <h1 className="text-3xl font-bold underline">
-    Hello world!
-  </h1>
+    <main className="flex flex-col gap-5 items-center">
+        <h1>To Do List</h1>
+        <Form/>
+        <TodoList/>
+    </main>
   )
 }
 
