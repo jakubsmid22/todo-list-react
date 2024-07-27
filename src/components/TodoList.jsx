@@ -1,9 +1,14 @@
 
-const TodoList = ({tasks}) => {
+const TodoList = ({tasks, deleteTask}) => {
 
   return (
-    <div>
-        {tasks.map((task, i) => <p key={i}>{task}</p>)}
+    <div className="min-h-[350px]">
+        {tasks.map((task, i) => {
+            return <div key={i} className="flex w-96 justify-between">
+                <p>{task}</p>
+                <button onClick={() => deleteTask(i)}>X</button>
+            </div>
+        })}
     </div>
   )
 }
